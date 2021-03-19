@@ -7,7 +7,7 @@ O Eclipse contém comandos de úteis para serem usados no dia a dia!
 <summary>Comandos diversos</summary>
 <br>
 
-`e.userinfo`, `e.avatar`, `e.emojify`, `e.shards`, `e.botinfo`
+`e!botinfo`, `e!lang`, `e!ping`, `e!help`
 
 </details>
 
@@ -18,17 +18,17 @@ O Eclipse contém comandos de música! Ouça aquele batidão em alta qualidade c
 <summary>Comandos de Música </summary>
 <br>
 
-`e.pause`, `e.play`, `e.queue`, `e.resume`, `e.shuffle`, `e.skip`, `e.stop`, `e.volume`, `e.nodes`
+`e!pause`, `e!play`, `e!queue`, `e!resume`, `e!shuffle`, `e!skip`, `e!stop`, `e!volume`, `è!search`
 
 </details>
 
 ## Filtros para música
 O Eclipse tambem contem filtros de música.
 <details>
-  <summary>Filtros de música <b>BETA</b></summary>
+  <summary>Filtros de música</summary>
   <br>
   
-  `e.nightcore`, `e.tremolo`, `e.vaporwave`, `e.bassboost`
+  `e!nightcore`, `e!vaporwave`, `e!bassboost`
 
 </details>
 
@@ -37,19 +37,14 @@ O Eclipse tambem contem filtros de música.
 
 [erela.js](https://www.npmjs.com/package/erela.js)
 
-[erela.js-spotify](https://www.npmjs.com/package/erela.js-spotify)
-
 [Discord.js](https://www.npmjs.com/package/discord.js)
 
-[Enmap](https://www.npmjs.com/package/enmap)
-
-
 #### Dúvidas? Achou um erro?
-Entre em contato com `BONEE#9999` ou abra um **issue**!
+Entre em contato com `Hiekki#6438` ou abra um **issue**!
 
 ## Como usar?
 
-* Abra a pasta **Structures**, *jsons** e abra e preencha o arquivo `config.example.json` com as informações necessárias, salve e renomeie para `config.json`
+* Preencha o arquivo `config.example.json` com as informações necessárias, salve e renomeie para `config.json`
 
 * Abra o terminal e de o seguinte comando:
 
