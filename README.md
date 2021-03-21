@@ -1,5 +1,7 @@
 # Eclipse
 
+(version)[https://img.shields.io/github/package-json/v/hiekkiStudio/Eclipse]
+
 ## Comandos diversos
 O Eclipse contém comandos de úteis para serem usados no dia a dia!
 
