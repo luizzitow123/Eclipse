@@ -27,6 +27,6 @@ Eclipse has not been released yet.
 - [Releases](https://github.com/HiekkiStudio/Eclipse/releases)
 
 ## To-do List
-- [] Rewrite in typescript
-- [] Blume connection
-- [] Release Eclipse!
+- [ ] Rewrite in typescript
+- [ ] Blume connection
+- [ ] Release Eclipse!
