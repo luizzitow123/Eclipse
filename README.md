@@ -9,5 +9,24 @@
     <img src="https://img.shields.io/github/downloads/HiekkiStudio/Eclipse/total?style=for-the-badge" alt="downloads badge">
     <br>
 </div>
+# WARNING
+This project is under development
 
 ## Features
+- Free and open source
+- 
+## Requirements
+- NodeJS 12
+
+## Installation
+Eclipse has not been released yet.
+
+## Links
+- [Documentation](https://docs.hiekki.gq)
+- [Discord Server](https://discord.gg/zTpXyK7CDH)
+- [Releases](https://github.com/HiekkiStudio/Eclipse/releases)
+
+## To-do List
+[] Rewrite in typescript
+[] Blume connection
+[] Release Eclipse!

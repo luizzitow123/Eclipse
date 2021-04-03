@@ -15,37 +15,18 @@
   },
   "private": true,
   "scripts": {
-    "start": "node src/start.js",
+    "start": "node dist/start.js",
     "build": "tsc",
     "build:start": "tsc && node dist/src/start.js",
     "eslint": "eslint ."
   },
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "engines": {
     "node": ">=12.0.0"
   },
   "engineStrict": true,
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "chalk": "^4.1.0",
-    "cookies": "^0.8.0",
-    "discord.js": "^12.5.1",
-    "dotenv": "^8.2.0",
-    "erela.js": "^2.3.2",
-    "erela.js-deezer": "^1.0.5",
-    "erela.js-spotify": "^1.2.0",
-    "express": "^4.17.1",
-    "express-session": "^1.17.1",
-    "fs": "0.0.1-security",
-    "glob": "^7.1.6",
-    "method-override": "^3.0.0",
-    "moment": "^2.29.1",
-    "mongoose": "^5.12.3",
-    "music-progress-bar": "^1.0.4",
-    "passport": "^0.4.1",
-    "passport-discord": "^0.1.4",
-    "path": "^0.12.7",
-    "util": "^0.12.3"
+    "discord.js": "^12.5.3"
   },
   "devDependencies": {
     "@types/node": "^14.14.37",

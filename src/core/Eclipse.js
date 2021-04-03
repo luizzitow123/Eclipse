@@ -10,13 +10,11 @@ class Eclipse
     constructor(options) {
         super({
             disableEveryone: true,
-            firstShardID: options.firstShardId || options.shardId || 0,
-            lastShardID: options.lastShardId || options.shardId || 0,
-            maxShards: options.shardCount || 1,
+            messageCacheMaxSize: 200,
+            restTimeOffset: 1,
             ws: {
                 intents: Intents(),
               },
-            defaultImageFormat: 'png',
         });
 
         this.validate(options);
