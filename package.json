@@ -2,6 +2,7 @@
   "name": "eclipse",
   "version": "2.0.0",
   "homepage": "https://github.com/HiekkiStudio/Eclipse",
+  "license": "GPL-3.0",
   "author": {
     "name": "Hiekki4",
     "email": "hiekki4@gmail.com"
