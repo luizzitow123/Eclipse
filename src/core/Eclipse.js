@@ -1,12 +1,10 @@
 const { Client, Collection, Permissions } = require('discord.js');
-const Util = require('../structures/utils.js');
+const Util = require('../structures/Utils.js');
 const Intents = require('./managers/intentsManager');
 const DatabaseManager = require('denky-json-database');
-const settings = require('../structures/settings');
+const settings = require('../structures/Settings');
 const pkg = require('../../package.json');
-const Mongo = require('../modules/mongo')
-const database = new Mongo()
-require('../website/dashboard')
+
 class Eclipse
     extends Client {
     constructor(options) {
@@ -37,9 +35,7 @@ class Eclipse
         
         this.version = pkg.version;
 
-        this.owners = process.env.APP_OWNERS
-
-        this.database = database;
+        this.owners = options.owners,
 
         this.db = new DatabaseManager('./data/db.json');
 
@@ -48,9 +44,9 @@ class Eclipse
     validate(options) {
         if (typeof options !== 'object') throw new TypeError('Opção para obejeto');
 
-        this.token = process.env.APP_TOKEN;
+        this.token = options.bot.token;
 
-        this.prefix = process.env.APP_PREFIX;
+        this.prefix = options.bot.prefix;
 
         this.defaultPerms = new Permissions(["SEND_MESSAGES", "READ_MESSAGE_HISTORY", "CONNECT", "SPEAK"]).freeze();
 

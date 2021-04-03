@@ -1,8 +1,8 @@
 const path = require('path');
 const { promisify } = require('util');
 const glob = promisify(require('glob'));
-const Command = require('./command.js');
-const Event = require('./event.js');
+const Command = require('./Command.js');
+const Event = require('./Event.js');
 const logger = require("../core/logger")
 
 class Util {

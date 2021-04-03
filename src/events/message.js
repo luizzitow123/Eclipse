@@ -1,9 +1,9 @@
-const Event = require('../structures/event');
+const Event = require('../structures/Event');
 
 module.exports = class extends Event {
 	async run(message) {
 
-		require("../structures/quote")
+		require("../structures/Quote")
 
 		let lang = this.client.db.get(message.guild.id) || 'pt'
 

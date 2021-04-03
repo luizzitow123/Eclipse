@@ -1,4 +1,4 @@
-const Event = require('../structures/event');
+const Event = require('../structures/Event');
 const LavalinkManager = require("../core/player/lavalinkManager")
 const logger = require("../core/logger")
 
