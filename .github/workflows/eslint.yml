@@ -31,4 +31,4 @@ jobs:
       - name: Copy config example 📓
         run: cp config/config.example.json config/config.json
       - name: Run Linter ✏️
-        run: npm run lint
+        run: npm run eslint
