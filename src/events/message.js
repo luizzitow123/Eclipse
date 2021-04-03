@@ -5,9 +5,9 @@ module.exports = class extends Event {
 
 		require("../structures/Quote")
 
-		let lang = this.client.db.get(message.guild.id) || 'pt'
+		let lang = this.client.db.get(message.guild.id) || 'en'
 
-		let checks = this.client.db.get(message.guild.id) || 'pt'
+		let checks = this.client.db.get(message.guild.id) || 'en'
 
 		let ptbr = JSON.parse(JSON.stringify(this.client.lang.pt))
 		let enus = JSON.parse(JSON.stringify(this.client.lang.en))
@@ -60,7 +60,7 @@ module.exports = class extends Event {
 
 			if (command.args && !args.length) {
 				console.log(lang)
-				return message.reply(`${lang.message.args} ${checks === 'en' ? command.usage_en : command.usage}`);
+				return message.reply(`${lang.message.args} ${checks === 'pt' ? command.usage_en : command.usage}`);
 			}
 
 			if (message.guild) {
@@ -69,7 +69,7 @@ module.exports = class extends Event {
 				if (userPermCheck) {
 					const missing = message.channel.permissionsFor(message.member).missing(userPermCheck);
 					if (missing.length) {
-						return message.reply(`${lang.message.userPerms} \`${checks === 'en' ? this.client.utils.formatArray(missing.map(this.client.utils.formatPerms)) : this.client.utils.formatArray2(missing.map(this.client.utils.formatPerms))}\` ${lang.message.userPerms2}`);
+						return message.reply(`${lang.message.userPerms} \`${checks === 'pt' ? this.client.utils.formatArray(missing.map(this.client.utils.formatPerms)) : this.client.utils.formatArray2(missing.map(this.client.utils.formatPerms))}\` ${lang.message.userPerms2}`);
 					}
 				}
 
@@ -77,7 +77,7 @@ module.exports = class extends Event {
 				if (botPermCheck) {
 					const missing = message.channel.permissionsFor(this.client.user).missing(botPermCheck);
 					if (missing.length) {
-						return message.reply(`${lang.message.botPerm} \`${checks === 'en' ? this.client.utils.formatArray(missing.map(this.client.utils.formatPerms)) : this.client.utils.formatArray2(missing.map(this.client.utils.formatPerms))}\` ${lang.message.botPerm2}`);
+						return message.reply(`${lang.message.botPerm} \`${checks === 'pt' ? this.client.utils.formatArray(missing.map(this.client.utils.formatPerms)) : this.client.utils.formatArray2(missing.map(this.client.utils.formatPerms))}\` ${lang.message.botPerm2}`);
 					}
 				}
 			}

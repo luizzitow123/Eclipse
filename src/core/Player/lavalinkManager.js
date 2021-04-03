@@ -33,7 +33,7 @@ module.exports = async (client) => {
 
 		.on('trackStart', (player, track) => {
 			const channel = client.channels.cache.get(player.textChannel);
-			let lang = client.db.get(channel.guild.id) || 'pt'
+			let lang = client.db.get(channel.guild.id) || 'en'
 			if (lang === 'en') lang = client.lang.en
 			if (lang === 'pt') lang = client.lang.pt
 			let embed = new MessageEmbed()
@@ -61,7 +61,7 @@ module.exports = async (client) => {
 		.on("trackError", (player, track, payload) => {
 			if (payload.type === 'TrackExceptionEvent') {
 				let channel = client.channels.cache.get(player.textChannel)
-				let lang = client.db.get(channel.guild.id) || 'pt'
+				let lang = client.db.get(channel.guild.id) || 'en'
 				if (lang === 'en') lang = client.lang.en
 				if (lang === 'pt') lang = client.lang.pt
 				channel.send(`${lang.play.erro}: ${payload.error}`)
@@ -71,7 +71,7 @@ module.exports = async (client) => {
 		.on("trackStuck", (player, track, payload) => {
 			if (payload.type === 'TrackExceptionEvent') {
 				let channel = client.channels.cache.get(player.textChannel)
-				let lang = client.db.get(channel.guild.id) || 'pt'
+				let lang = client.db.get(channel.guild.id) || 'en'
 				if (lang === 'en') lang = client.lang.en
 				if (lang === 'pt') lang = client.lang.pt
 				channel.send(`${lang.play.erro}: ${payload.error}`)
@@ -80,7 +80,7 @@ module.exports = async (client) => {
 
 		.on("queueEnd", player => {
 			const channel = client.channels.cache.get(player.textChannel);
-			let lang = client.db.get(channel.guild.id) || 'pt'
+			let lang = client.db.get(channel.guild.id) || 'en'
 			if (lang === 'en') lang = client.lang.en
 			if (lang === 'pt') lang = client.lang.pt
 			channel.send(lang.erela.saindo);

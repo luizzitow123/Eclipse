@@ -10,8 +10,8 @@ module.exports = class extends Event {
 
     async run(guild) {
 
-        if(guild.region !== "brazil") {
-        this.client.db.set(guild.id, 'en')
+        if(guild.region == "brazil") {
+        this.client.db.set(guild.id, 'pt')
         }
     }
 }
