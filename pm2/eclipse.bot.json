@@ -1,0 +1,11 @@
+{
+    "apps": [
+      {
+        "name": "Eclipse",
+        "script": "src/start.js",
+        "pmx": false,
+        "vizion": false,
+        "env_production": { "NODE_ENV": "production" }
+      }
+    ]
+  }

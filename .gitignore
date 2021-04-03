@@ -1,5 +1,5 @@
-/node_modules
-Structures/jsons/config.json
-/data
-/resources/Thumbs.db
-/Structures/extensions/nodes.js
+config/config.json
+node_modules/
+src/core/player/nodes.js
+data
+.env
