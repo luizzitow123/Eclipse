@@ -273,7 +273,7 @@ delayed-stream@~1.0.0:
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
 
-denky-json-database@^1.0.3:
+denky-json-database@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/denky-json-database/-/denky-json-database-1.0.6.tgz#af3b982a14d349562b82a56aa068f7a6fa8eb9c5"
   integrity sha512-NIlr6/OdZZbgsZEH4xNo71RkEqZ7Xzj1OSVF8+in20TpZI9Z0y99jI6+uWJkLa450cyNVlLoV6tTnY3VLPynVw==
