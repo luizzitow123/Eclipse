@@ -10,7 +10,7 @@ const shard = new ShardingManager(`${__dirname}/index.js`, {
 });
 
 shard.on('shardCreate', shard => {
-    logger.info(`Iniciando a shard ${shard.id}`)
+    logger.info(`Starting shard ${shard.id}`)
 });
 
 const logo = fs.readFileSync('./logo.txt').toString()

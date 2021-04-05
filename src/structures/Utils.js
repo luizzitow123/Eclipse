@@ -112,7 +112,7 @@ class Util {
 	}
 
 	async loadCommands() {
-        logger.info("Comandos carregados")
+        logger.info("Commands loaded")
         return glob(`${this.directory}commands/**/*.js`).then(commands => {
             for (const commandFile of commands) {
                 delete require.cache[commandFile];
@@ -132,7 +132,7 @@ class Util {
     }
 
 	async loadEvents() {
-		logger.info("Eventos carregados")
+		logger.info("Events loaded")
 		return glob(`${this.directory}events/*.js`).then(events => {
 			for (const eventFile of events) {
 				delete require.cache[eventFile];

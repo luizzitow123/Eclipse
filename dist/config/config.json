@@ -1,0 +1,21 @@
+{
+    "maintenance": true,
+    "debug": true,
+    "owners": ["709883330472050768"],
+    "bot": {
+        "clientID": "",
+        "token": "NzQ0NTkyMTQwOTU2MzM2MTM4.XzldeA.eEcpGY_WQOLxyT0OURM1Fl8uy9s",
+        "shards": 4,
+        "prefix": "e!",
+        "color": ""
+    },
+    "database": {
+        "mongo": {
+            "link": "mongodb+srv://Eclipse:xtwVT3Vg6jJo0krj@eclipse.y5ra0.mongodb.net/Eclipse?retryWrites=true&w=majority"
+        }
+    },
+    "spotify": {
+        "clientID": "9e80e8b65c874d588eda368b240bb674",
+        "clientSecret": "b82a0323942744f5b933ea7e3b70b72a"
+    }
+}

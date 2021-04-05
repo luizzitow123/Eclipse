@@ -19,7 +19,7 @@ module.exports = class extends Event {
 		LavalinkManager(this.client);
 		this.client.manager.init(this.client.user.id);
 
-		logger.info(`O ${this.client.user.username} foi iniciado`)
+		logger.info(`${this.client.user.username} started`)
 
 		setInterval(() => {
 			this.client.user.setActivity(`${this.client.prefix}help | Uptime ${this.client.utils.time(this.client.uptime)}`), { type: 5 }

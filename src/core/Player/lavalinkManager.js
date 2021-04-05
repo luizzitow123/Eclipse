@@ -28,8 +28,8 @@ module.exports = async (client) => {
 		},
 	})
 
-		.on('nodeError', (node, error) => logger.error(5, `O node ${node.options.identifier} teve o seguinte erro ao tentar conectar: ${error.message}`))
-		.on('nodeConnect', node => logger.info(`Nnode ${node.options.identifier} foi conectado`))
+		.on('nodeError', (node, error) => logger.error(5, `The node ${node.options.identifier} had the following error when trying to connect: ${error.message}`))
+		.on('nodeConnect', node => logger.info(`Node ${node.options.identifier} has been connected`))
 
 		.on('trackStart', (player, track) => {
 			const channel = client.channels.cache.get(player.textChannel);

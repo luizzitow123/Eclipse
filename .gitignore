@@ -3,3 +3,4 @@ node_modules/
 src/core/player/nodes.js
 data
 .env
+src/server

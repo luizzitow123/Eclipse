@@ -1,18 +1,10 @@
 {
-    "maintenance": false,
     "debug": false,
     "owners": [""],
     "bot": {
-        "clientID": "",
         "token": "",
         "shards": 1,
-        "prefix": "",
-        "color": ""
-    },
-    "database": {
-        "mongo": {
-            "link": "" 
-        }
+        "prefix": ""
     },
     "spotify": {
         "clientID": "",
