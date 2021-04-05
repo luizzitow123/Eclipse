@@ -1,11 +1,12 @@
 import { ShardingManager } from 'discord.js';
+import config from '../config/config.json';
 import logger from './core/logger';
 import chalk from 'chalk';
 import fs from 'fs';
 
 // eslint-disable-next-line
 const shard = new ShardingManager(`${__dirname}/index.js`, { 
-    totalShards: 2, 
+    totalShards: config.bot.shards, 
     respawn: true,
 });
 

@@ -3,8 +3,13 @@
     "owners": [""],
     "bot": {
         "token": "",
-        "shards": 1,
+        "shards": 2,
         "prefix": ""
+    },
+    "database": {
+        "mongo": {
+            "url": "" 
+        }
     },
     "spotify": {
         "clientID": "",
