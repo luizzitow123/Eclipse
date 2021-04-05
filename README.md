@@ -6,6 +6,7 @@
         <img src="https://img.shields.io/github/package-json/v/HiekkiStudio/Eclipse?style=for-the-badge" alt="version badge">&emsp;
     <img src="https://img.shields.io/github/stars/HiekkiStudio/Eclipse?style=for-the-badge" alt="stars badge">&emsp;
     <img src="https://img.shields.io/github/watchers/HiekkiStudio/Eclipse?style=for-the-badge" alt="watchers badge">&emsp;
+    <img src="https://img.shields.io/discord/817092328861728789?label=Discord&logo=Discord&logoColor=white&style=for-the-badge" alt="discord badge">&emsp;
     <img src="https://img.shields.io/github/downloads/HiekkiStudio/Eclipse/total?style=for-the-badge" alt="downloads badge">
     <br>
 </div>
@@ -29,4 +30,5 @@ Eclipse has not been released yet.
 
 ## To-do List
 - [ ] Rewrite in typescript
+- [ ] Dockerfile and Docker compose
 - [ ] Release Eclipse!
