@@ -29,5 +29,4 @@ Eclipse has not been released yet.
 
 ## To-do List
 - [ ] Rewrite in typescript
-- [ ] Blume connection
 - [ ] Release Eclipse!

@@ -1,9 +1,13 @@
-const { Client, Collection, Permissions } = require('discord.js');
-const Util = require('../structures/Utils.js');
-const Intents = require('./managers/intentsManager');
-const DatabaseManager = require('denky-json-database');
-const settings = require('../structures/Settings');
-const pkg = require('../../package.json');
+const { Client, Collection, Permissions } = require('discord.js')
+const Util = require('../structures/Utils.js')
+const config = require('../../config/config.json')
+const Intents = require('./managers/intentsManager')
+const DatabaseManager = require('denky-json-database')
+const settings = require('../structures/Settings')
+const pkg = require('../../package.json')
+const Mongo = require('../database/database')
+
+const Database = new Mongo(config)
 
 class Eclipse
     extends Client {
@@ -34,6 +38,10 @@ class Eclipse
         this.version = pkg.version;
 
         this.owners = options.owners,
+
+        this.config = config;
+
+        this.database = Database;
 
         this.db = new DatabaseManager('./data/db.json');
 
