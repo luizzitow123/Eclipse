@@ -7,17 +7,11 @@ import fs from 'fs';
 
 const logo = fs.readFileSync('./logo.txt').toString()
 console.log(chalk.blueBright(logo), '\n');
-setInterval(() => {
-    try {
-        axios.get(`${config.server.blume.url}:${config.server.blume.port}`)
-    } catch (e) {
-        logger.error(5, `You need to connect to a blume server`)
-    }
-}, 100)
 
 // eslint-disable-next-line
 const shard = new ShardingManager(`${__dirname}/index.js`, {
-    totalShards: config.bot.shards,
+    token: config.bot.token,
+    totalShards: config.bot.shards || "auto",
     respawn: true,
 });
 

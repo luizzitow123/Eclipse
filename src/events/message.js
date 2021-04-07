@@ -1,4 +1,5 @@
 const Event = require('../structures/Event');
+const User = require('../database/models/discordUser')
 
 module.exports = class extends Event {
 	async run(message) {
@@ -37,6 +38,16 @@ module.exports = class extends Event {
 		if (!message.content.startsWith(prefix)) return;
 
 		if (!message.guild) return;
+
+		User.findOne({ id: message.author.id }, async () => {
+			new User({
+				id: message.author.id,
+				username: message.author.username,
+				discriminator: message.author.discriminator,
+				avatar: String,
+              });
+			await User.save()
+		})
 
 		const [cmd, ...args] = message.content.slice(prefix.length).trim().split(/ +/g);
 
@@ -80,9 +91,9 @@ module.exports = class extends Event {
 						return message.reply(`${lang.message.botPerm} \`${checks === 'pt' ? this.client.utils.formatArray(missing.map(this.client.utils.formatPerms)) : this.client.utils.formatArray2(missing.map(this.client.utils.formatPerms))}\` ${lang.message.botPerm2}`);
 					}
 				}
+			
 			}
 			command.run(message, args, lang)
 		}
 	}
-
-};
+}

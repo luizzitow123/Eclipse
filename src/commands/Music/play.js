@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 const Command = require('../../structures/Command');
 const { MessageEmbed } = require("discord.js")
 
@@ -89,7 +90,7 @@ module.exports = class extends Command {
                 embed4.setColor(message.guild.me.roles.highest.color)
                 embed4.setFooter(`${lang.play.solicitado} ${res.tracks[0].requester.tag}`, `${res.tracks[0].requester.displayAvatarURL({ dynamic: true, size: 2048 })}`)
                 embed4.setDescription(`**${lang.play.fila}** \`${res.tracks[0].title}\` **${lang.play.fila2}** \n**${lang.play.duracao}:** \`${this.client.utils.time(res.tracks[0].duration)}\``)
-                message.quote(embed)
+                message.quote(embed4)
                 return;
         }
     }

@@ -12,4 +12,5 @@ class Mongo {
         return true;
     }
 }
+
 export default Mongo;
