@@ -23,8 +23,23 @@
 - MongoDB Database
 - Lavalink Server
 
-## Getting Started
-Please read our [documentation](https://docs.hiekki.gq).
+## Installation
+Clone the repository:
+
+```bash
+git clone https://github.com/HiekkiStudio/Eclipse.git
+```
+
+Fill the file `config.example.json` on the diretoy config with the necessary information, save and rename it to `config/config.json`
+
+Open the terminal and run the following command:
+ ```bash
+npm i
+```
+and then run:
+```bash
+npm run build:start
+```
 
 ## Links
 - [Documentation](https://docs.hiekki.gq)
