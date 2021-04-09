@@ -53,7 +53,7 @@ class Eclipse
 
         this.prefix = options.bot.prefix;
 
-        this.defaultPerms = new Permissions(["SEND_MESSAGES", "READ_MESSAGE_HISTORY", "CONNECT", "SPEAK"]).freeze();
+        this.defaultPerms = new Permissions(["SEND_MESSAGES", "READ_MESSAGE_HISTORY"]).freeze();
 
     }
     async start(token = this.token) {
