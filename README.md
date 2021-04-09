@@ -12,23 +12,24 @@
 </div>
 
 ## WARNING
-This project is under development
+**This project is under development!**
 
 ## Features
 - Free and open source
+- High quality of streaming
 
 ## Requirements
 - NodeJS 12
+- MongoDB Database
+- Lavalink Server
 
-## Installation
-Eclipse has not been released yet.
+## Getting Started
+Please read our [documentation](https://docs.hiekki.gq).
 
 ## Links
 - [Documentation](https://docs.hiekki.gq)
 - [Discord Server](https://discord.gg/zTpXyK7CDH)
 - [Releases](https://github.com/HiekkiStudio/Eclipse/releases)
 
-## To-do List
-- [ ] Rewrite in typescript
-- [ ] Dockerfile and Docker compose
-- [ ] Release Eclipse!
+## License
+Eclipse is licensed under the GPL-3.0 license. Please take a look at the `LICENSE` file.

@@ -64,7 +64,8 @@ module.exports = async (client) => {
             tocandoEm: "Playing in",
             memoria: "RAM usage",
             suporte: "Support server",
-            convide: "Invite me"
+            convide: "Invite me",
+            version: "Version"
         },
         search: {
             semCanal: "Enter a voice channel and use the command again",

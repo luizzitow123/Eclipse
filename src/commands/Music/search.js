@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 const Command = require('../../structures/Command');
 const { MessageEmbed } = require("discord.js")
 
@@ -79,6 +80,7 @@ module.exports = class extends Command {
             embed3.setColor(message.guild.me.roles.highest.color)
             embed3.setTimestamp()
             embed3.setDescription(`${results}\n \n<:yep:785737562819526666> ${lang.search.numero} \`cancelar\``)
+            embed3.setFooter(`Copyright © 2020 - 2021 Hiekki Studio - v${this.client.version}`)
             message.quote(embed3);
 
             try {
@@ -103,6 +105,7 @@ module.exports = class extends Command {
 
             let embed4 = new MessageEmbed()
             embed4.setColor(message.guild.me.roles.highest.color)
+            embed4.setFooter(`Copyright © 2020 - 2021 Hiekki Studio - v${this.client.version}`)
             embed4.setFooter(`${lang.search.solicitado} ${track.requester.tag}`, `${track.requester.displayAvatarURL({ dynamic: true, size: 2048 })}`)
             embed4.setDescription(`**${lang.search.fila}** \`${track.title}\` **${lang.search.fila2}** \n**${lang.search.duracao}:** \`${this.client.utils.time(track.duration)}\``)
             if(!player.playing && !player.paused && !player.queue.length) player.play();

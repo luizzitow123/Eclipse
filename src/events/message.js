@@ -1,5 +1,5 @@
 const Event = require('../structures/Event');
-const User = require('../database/models/discordUser')
+//const User = require('../database/models/discordUser')
 
 module.exports = class extends Event {
 	async run(message) {
@@ -39,7 +39,7 @@ module.exports = class extends Event {
 
 		if (!message.guild) return;
 
-		User.findOne({ id: message.author.id }, async () => {
+	/*	User.findOne({ id: message.author.id }, async () => {
 			new User({
 				id: message.author.id,
 				username: message.author.username,
@@ -47,7 +47,7 @@ module.exports = class extends Event {
 				avatar: String,
               });
 			await User.save()
-		})
+		}) */
 
 		const [cmd, ...args] = message.content.slice(prefix.length).trim().split(/ +/g);
 

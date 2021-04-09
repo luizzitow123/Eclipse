@@ -40,7 +40,7 @@ module.exports = async (client) => {
 			embed.setDescription(`**${lang.erela.tocando}** \`${track.title}\``)
 			embed.setTimestamp()
 			embed.setColor(client.channels.cache.get(player.textChannel).guild.me.roles.highest.color)
-			embed.setFooter(`${lang.erela.solicitado} ${track.requester.tag}`, `${track.requester.displayAvatarURL({ dynamic: true, size: 2048 })}`)
+			embed.setFooter(`Copyright © 2020 - 2021 Hiekki Studio - v${this.client.version}`)
 			channel.send(embed).then(msg => player.set("message", msg));
 		})
 

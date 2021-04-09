@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 const { MessageEmbed } = require('discord.js');
 const Command = require('../../structures/Command');
 
@@ -34,6 +35,7 @@ module.exports = class extends Command {
 			let embed = new MessageEmbed()
 			embed.setColor(message.guild.me.roles.highest.color)
 		    embed.setTimestamp()
+			embed.setFooter(`Copyright © 2020 - 2021 Hiekki Studio - v${this.client.version}`)
 			embed.setAuthor(this.client.user.username, this.client.user.displayAvatarURL({ size:2048 }))
 			embed.setDescription([
 				`**• Aliases:** ${cmd.aliases.length ? cmd.aliases.map(alias => `\`${alias}\``).join(' **|** ') : lang.help.Aliases}`,
@@ -48,6 +50,7 @@ module.exports = class extends Command {
 			let embed1 = new MessageEmbed()
 		    embed1.setColor(message.guild.me.roles.highest.color)
 		    embed1.setTimestamp()
+			embed1.setFooter(`Copyright © 2020 - 2021 Hiekki Studio - v${this.client.version}`)
 		    embed1.setAuthor(this.client.user.username, this.client.user.displayAvatarURL({ size:2048 }))
 		    embed1.addFields(
 			    { name: `${lang.help.outros} (${this.client.commands.filter(command => command.category === "Outros").size})`, value: `${this.client.commands.filter(command => command.category === "Outros").map(e => `\`${this.client.prefix}${e.name}\``).join(" **|** ")}` + '.' },

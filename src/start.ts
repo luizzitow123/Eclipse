@@ -4,7 +4,7 @@ import logger from './core/logger';
 import chalk from 'chalk';
 import axios from 'axios';
 import fs from 'fs';
-
+require('./structures/checkVersion')
 const logo = fs.readFileSync('./logo.txt').toString()
 console.log(chalk.blueBright(logo), '\n');
 

@@ -66,6 +66,7 @@ module.exports = class extends Command {
                 if (!player.playing && !player.paused && !player.queue.size) player.play();
                 let embed = new MessageEmbed()
                 embed.setTimestamp()
+                embed.setFooter(`Copyright © 2020 - 2021 Hiekki Studio - v${this.client.version}`)
                 embed.setColor(message.guild.me.roles.highest.color)
                 embed.setDescription(`**${lang.play.musgaAdd}** \`${res.tracks[0].title}\`\n**${lang.play.duracao}:** \`${this.client.utils.time(res.tracks[0].duration)}\``)
                 embed.setFooter(`${lang.play.solicitado} ${res.tracks[0].requester.tag}`, `${res.tracks[0].requester.displayAvatarURL({ dynamic: true, size: 2048 })}`)
@@ -77,6 +78,7 @@ module.exports = class extends Command {
                 if (!player.playing && !player.paused && player.queue.totalSize === res.tracks.length) player.play();
                 let embed2 = new MessageEmbed()
                 embed2.setTimestamp()
+                embed2.setFooter(`Copyright © 2020 - 2021 Hiekki Studio - v${this.client.version}`)
                 embed2.setColor(message.guild.me.roles.highest.color)
                 embed2.setDescription(`**${lang.play.playlist}** \`${res.playlist.name}\` **${lang.play.com}** \`${res.tracks.length}\` **${lang.play.musicas}**\n**${lang.play.duracao}:** \`${this.client.utils.time(res.playlist.duration)}\``)
                 embed2.setFooter(`${lang.play.solicitado} ${res.tracks[0].requester.tag}`, `${res.tracks[0].requester.displayAvatarURL({ dynamic: true, size: 2048 })}`)
@@ -87,6 +89,7 @@ module.exports = class extends Command {
                 await player.queue.add(res.tracks[0]);
                 if(!player.playing && !player.paused && !player.queue.length) player.play();
                 let embed4 = new MessageEmbed()
+                embed4.setFooter(`Copyright © 2020 - 2021 Hiekki Studio - v${this.client.version}`)
                 embed4.setColor(message.guild.me.roles.highest.color)
                 embed4.setFooter(`${lang.play.solicitado} ${res.tracks[0].requester.tag}`, `${res.tracks[0].requester.displayAvatarURL({ dynamic: true, size: 2048 })}`)
                 embed4.setDescription(`**${lang.play.fila}** \`${res.tracks[0].title}\` **${lang.play.fila2}** \n**${lang.play.duracao}:** \`${this.client.utils.time(res.tracks[0].duration)}\``)

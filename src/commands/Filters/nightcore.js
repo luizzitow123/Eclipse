@@ -18,7 +18,7 @@ module.exports = class extends Command {
 
         let { channel } = message.member.voice;
 
-        let player = this.client.music.players.get(message.guild.id)
+        let player = this.client.manager.players.get(message.guild.id)
 
         if(!player) { return message.channel.send(lang.bassboost.nada) }
 

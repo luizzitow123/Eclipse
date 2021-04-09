@@ -64,7 +64,8 @@ module.exports = async (client) => {
             tocandoEm: "Tocando em",
             memoria: "Uso de ram",
             suporte: "Servidor de suporte",
-            convide: "Me convide"
+            convide: "Me convide",
+            version: "Versão"
         },
         search: {
             semCanal: "Entre em algum canal de voz e use o comando novamente",

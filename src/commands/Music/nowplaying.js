@@ -29,6 +29,7 @@ module.exports = class extends Command {
 
         let embed = new MessageEmbed()
         embed.setTimestamp()
+        embed.setFooter(`Copyright © 2020 - 2021 Hiekki Studio - v${this.client.version}`)
         embed.setAuthor("NowPlaying", message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
         embed.setColor(message.guild.me.roles.highest.color)
         embed.setDescription(`${player.playing ? "" : ""} ${title}\n${progressBar} \`${player.position <= 60000 ? `${this.client.utils.time(player.position)}` : this.client.utils.time(player.position)} / ${this.client.utils.time(duration)}\``);
