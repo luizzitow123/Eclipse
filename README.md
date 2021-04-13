@@ -11,9 +11,6 @@
     <br>
 </div>
 
-## WARNING
-**This project is under development!**
-
 ## Features
 - Free and open source
 - High quality of streaming
