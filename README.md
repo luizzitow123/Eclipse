@@ -39,7 +39,6 @@ npm run build:start
 ```
 
 ## Links
-- [Documentation](https://docs.hiekki.gq)
 - [Discord Server](https://discord.gg/zTpXyK7CDH)
 - [Releases](https://github.com/HiekkiStudio/Eclipse/releases)
 
