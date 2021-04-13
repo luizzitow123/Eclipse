@@ -27,7 +27,7 @@ Clone the repository:
 git clone https://github.com/HiekkiStudio/Eclipse.git
 ```
 
-Fill the file `config.example.json` on the diretoy config with the necessary information, save and rename it to `config/config.json`
+Fill the file `config.example.json` on the diretoy config with the necessary information, save and rename it to `config.json`
 
 Open the terminal and run the following command:
  ```bash
