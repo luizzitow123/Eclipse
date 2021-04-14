@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
-import logger from '../core/logger'
+const mongoose = require('mongoose')
+const logger = require('../core/logger')
 
 class Mongo {
-    constructor(config: any) {
+    constructor(config) {
         mongoose.connect(config.database.mongo.url, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
@@ -13,4 +13,4 @@ class Mongo {
     }
 }
 
-export default Mongo;
+module.exports = Mongo;

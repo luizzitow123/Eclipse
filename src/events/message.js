@@ -1,5 +1,5 @@
 const Event = require('../structures/Event');
-//const User = require('../database/models/discordUser')
+const User = require('../database/models/discordUser')
 
 module.exports = class extends Event {
 	async run(message) {
@@ -39,7 +39,7 @@ module.exports = class extends Event {
 
 		if (!message.guild) return;
 
-	/*	User.findOne({ id: message.author.id }, async () => {
+		User.findOne({ id: message.author.id }, async () => {
 			new User({
 				id: message.author.id,
 				username: message.author.username,
@@ -47,7 +47,7 @@ module.exports = class extends Event {
 				avatar: String,
               });
 			await User.save()
-		}) */
+		}) 
 
 		const [cmd, ...args] = message.content.slice(prefix.length).trim().split(/ +/g);
 
@@ -70,14 +70,13 @@ module.exports = class extends Event {
 			}
 
 			if (command.args && !args.length) {
-				console.log(lang)
 				return message.reply(`${lang.message.args} ${checks === 'pt' ? command.usage_en : command.usage}`);
 			}
 
 			if (message.guild) {
 
 				const userPermCheck = command.userPerms ? this.client.defaultPerms.add(command.userPerms) : this.client.defaultPerms;
-				if (userPermCheck) {
+				if (userPermCheck && !this.client.utils.checkOwner(message.author.id)) {
 					const missing = message.channel.permissionsFor(message.member).missing(userPermCheck);
 					if (missing.length) {
 						return message.reply(`${lang.message.userPerms} \`${checks === 'pt' ? this.client.utils.formatArray(missing.map(this.client.utils.formatPerms)) : this.client.utils.formatArray2(missing.map(this.client.utils.formatPerms))}\` ${lang.message.userPerms2}`);

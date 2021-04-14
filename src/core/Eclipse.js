@@ -5,9 +5,9 @@ const Intents = require('./managers/intentsManager')
 const DatabaseManager = require('denky-json-database')
 const settings = require('../structures/Settings')
 const pkg = require('../../package.json')
-// const Mongo = require('../database/database')
+const Mongo = require('../database/database')
 
-//const Database = new Mongo(config)
+const Database = new Mongo(config)
 
 class Eclipse
     extends Client {
@@ -41,7 +41,7 @@ class Eclipse
 
         this.config = config;
 
-   //     this.database = Database;
+        this.database = Database;
 
         this.db = new DatabaseManager('./data/db.json');
 
@@ -57,7 +57,7 @@ class Eclipse
 
     }
     async start(token = this.token) {
-
+        
         this.utils.loadCommands()
         this.utils.loadEvents()
         await super.login(token);
