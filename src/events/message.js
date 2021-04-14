@@ -44,7 +44,6 @@ module.exports = class extends Event {
 				id: message.author.id,
 				username: message.author.username,
 				discriminator: message.author.discriminator,
-				avatar: String,
               });
 			await User.save()
 		}) 
