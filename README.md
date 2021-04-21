@@ -17,7 +17,6 @@
 
 ## Requirements
 - NodeJS 12
-- MongoDB Database
 - Lavalink Server
 
 ## Installation

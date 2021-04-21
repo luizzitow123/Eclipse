@@ -1,15 +1,9 @@
 {
-    "debug": false,
     "owners": [""],
     "bot": {
         "token": "",
         "shards": 2,
         "prefix": ""
-    },
-    "database": {
-        "mongo": {
-            "url": "" 
-        }
     },
     "spotify": {
         "clientID": "",

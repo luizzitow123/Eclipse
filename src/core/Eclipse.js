@@ -5,9 +5,6 @@ const Intents = require('./managers/intentsManager')
 const DatabaseManager = require('denky-json-database')
 const settings = require('../structures/Settings')
 const pkg = require('../../package.json')
-const Mongo = require('../database/database')
-
-const Database = new Mongo(config)
 
 class Eclipse
     extends Client {
@@ -40,8 +37,6 @@ class Eclipse
         this.owners = options.owners,
 
         this.config = config;
-
-        this.database = Database;
 
         this.db = new DatabaseManager('./data/db.json');
 

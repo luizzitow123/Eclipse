@@ -1,5 +1,5 @@
 const Event = require('../structures/Event');
-const LavalinkManager = require("../core/player/lavalinkManager")
+const LavalinkManager = require("../core/Player/lavalinkManager")
 const logger = require("../core/logger")
 
 module.exports = class extends Event {

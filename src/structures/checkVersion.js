@@ -18,6 +18,6 @@ async function gitVerify () {
   const remoteRef = await exec(`git rev-parse origin/${currentHead.stdout.trim()}`)
   const currentRef = await exec('git rev-parse HEAD')
   const count = await exec(`git rev-list ${currentRef.stdout.trim()}..${remoteRef.stdout.trim()} --count`)
-  if (count.stdout.trim() > 0) logger.error(2, `You're behind ${count.stdout.trim()} commit(s) compared to remote branch ${currentHead.stdout.trim()}, update recommended`)
+  if (count.stdout.trim() > 0) logger.error(2, `Update recommended`)
   else logger.log('Fully up-to-date, nice!')
 }

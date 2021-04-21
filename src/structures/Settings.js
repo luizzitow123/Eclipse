@@ -1,3 +1,3 @@
-export default {
+module.export = {
     leaveVoice: 60000
 }
