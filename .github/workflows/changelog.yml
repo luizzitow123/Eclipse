@@ -9,6 +9,7 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/core
       - uses: actions/checkout@v2
       - uses: vemel/update-changelog@0.0.1
         id: changelog
