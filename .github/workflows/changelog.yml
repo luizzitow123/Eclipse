@@ -19,13 +19,13 @@ jobs:
           stripHeaders: "true"
           stripGeneratorNotice: "true"
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v2
+        uses: peter-evans/create-pull-request@v3
         with:
           commit-message: Changelog update
           labels: changelog, update
           title: "Changelog Update"
           body: |
-            # Release ${{ steps.version.outputs.version }}
+            # Changelog Update
 
             Merge this PR to update your changelog!
 
