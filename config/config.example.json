@@ -1,0 +1,12 @@
+{
+    "owners": [""],
+    "bot": {
+        "token": "",
+        "shards": 2,
+        "prefix": ""
+    },
+    "spotify": {
+        "clientID": "",
+        "clientSecret": ""
+    }
+}
