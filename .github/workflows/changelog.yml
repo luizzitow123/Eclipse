@@ -9,23 +9,26 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/core
       - uses: actions/checkout@v2
-      - uses: vemel/update-changelog@0.0.1
-        id: changelog
+      - name: "✏️ Generate release changelog"
+        id: generate-release-changelog
+        uses: heinrichreimer/github-changelog-generator-action@v2.1.1
         with:
-          version: ${{ steps.version.outputs.version }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          onlyLastTag: "true"
+          stripHeaders: "true"
+          stripGeneratorNotice: "true"
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v2
         with:
           commit-message: Changelog update
           labels: changelog, update
-          title: "Changelog update"
+          title: "Changelog Update"
           body: |
             # Release ${{ steps.version.outputs.version }}
 
             Merge this PR to update your changelog!
 
-            ## Included Pull Requests
+            ## Changelog
 
-            ${{ steps.changelog.outputs.pulls_list_md }}
+            ${{ steps.generate-release-changelog.outputs.changelog }}
