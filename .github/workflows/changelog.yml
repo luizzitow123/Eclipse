@@ -1,0 +1,34 @@
+name: Changelog Update
+
+on:
+  push:
+    branches:
+      - master
+  
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: "✏️ Generate release changelog"
+        id: generate-release-changelog
+        uses: heinrichreimer/github-changelog-generator-action@v2.1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          onlyLastTag: "true"
+          stripHeaders: "true"
+          stripGeneratorNotice: "true"
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Changelog update
+          labels: changelog, update
+          title: "Changelog Update"
+          body: |
+            # Changelog Update
+
+            Merge this PR to update your changelog!
+
+            ## Changelog
+
+            ${{ steps.generate-release-changelog.outputs.changelog }}
