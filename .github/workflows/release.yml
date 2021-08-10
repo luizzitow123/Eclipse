@@ -21,7 +21,7 @@ jobs:
           git config --local user.name "Eclipse Actions"
           git checkout -b $BRANCH
           git push -u origin $BRANCH
-          sed -i "s/ "version": "canary",/ "version": "${REF:11}",/" config/app.js
+          npm version "${REF:10}"
           git add config/app.php
           git commit -m "bump version for release"
           git push
