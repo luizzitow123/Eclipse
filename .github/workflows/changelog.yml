@@ -13,11 +13,10 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: "3.8"
-      - name: Changelog
-        id: github_release
-        uses: mikepenz/release-changelog-builder-action@v2.1.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Generate changelog
+        uses: fabernovel/github-changelog-generator-action@v1.0.0-alpha02
+        with:
+          options: --token ${{ secrets.GITHUB_TOKEN }}
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
