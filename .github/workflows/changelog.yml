@@ -18,10 +18,6 @@ jobs:
         id: Changelog
         with:
           package-dir: 'package.json'
-      - uses: Hiekki4/update-changelog@v2
-        id: changelog
-        with:
-          version: ${{ steps.version.outputs.version }}
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v2
         with:
