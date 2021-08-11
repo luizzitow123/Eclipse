@@ -15,8 +15,8 @@ jobs:
           python-version: "3.8"
       - name: Changelog
         id: github_release
-        uses: mikepenz/release-changelog-builder-action@{latest-release}
-        env:
+        uses: mikepenz/release-changelog-builder-action@v2.1.1
+        with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
