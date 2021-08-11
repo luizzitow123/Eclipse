@@ -16,11 +16,6 @@ jobs:
       - name: Changelog
         uses: scottbrenner/generate-changelog-action@master
         id: Changelog
-        env:
-          REF: ${{ github.ref }}
-        with:
-          from-tag: 'v${REF:10}'
-          to-tag: HEAD
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
