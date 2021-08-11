@@ -23,6 +23,4 @@ jobs:
           commit-message: Update changelogs
           title: "Update changelogs"
           body: |
-            # Update Changelogs
-
-            ${{steps.github_release.outputs.changelog}}
+          Update Changelogs
