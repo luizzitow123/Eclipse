@@ -18,6 +18,8 @@ jobs:
         id: Changelog
         with:
           allow-unknown: true
+          from-tag: v2.5.0
+          to-tag: v2.5.0
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
