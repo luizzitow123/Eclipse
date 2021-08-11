@@ -1,34 +1,40 @@
-name: Changelog Update
-
 on:
-  push:
-    branches:
-      - master
-  
+  release:
+    type: published
+
 jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: "✏️ Generate release changelog"
-        id: generate-release-changelog
-        uses: heinrichreimer/github-changelog-generator-action@v2.1.1
+      - name: Set up Python
+        uses: actions/setup-python@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          onlyLastTag: "true"
-          stripHeaders: "true"
-          stripGeneratorNotice: "true"
+          python-version: "3.8"
+      - name: Update version
+        id: version
+        run: |
+          echo "GITHUB_REF is a tag you set for the release"
+          echo "Your GitHub ref: ${GITHUB_REF}"
+          VERSION=`echo "${GITHUB_REF}" | cut -f 3 -d "/"`
+          echo "Preparing version ${VERSION}"
+          echo "__version__ = \"${VERSION}\"" > __version__.py
+          echo "##[set-output name=version;]$(echo ${VERSION})"
+      - uses: vemel/update-changelog@0.0.1
+        id: changelog
+        with:
+          version: ${{ steps.version.outputs.version }}
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v2
         with:
-          commit-message: Changelog update
-          labels: changelog, update
-          title: "Changelog Update"
+          commit-message: Release ${{ steps.version.outputs.version }}
+          labels: release, bot
+          title: "Release ${{ steps.version.outputs.version }}"
           body: |
-            # Changelog Update
+            # Release ${{ steps.version.outputs.version }}
 
-            Merge this PR to update your changelog!
+            Merge this PR to update your version and changelog!
 
-            ## Changelog
+            ## Included Pull Requests
 
-            ${{ steps.generate-release-changelog.outputs.changelog }}
+            ${{ steps.changelog.outputs.pulls_list_md }}

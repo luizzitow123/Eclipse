@@ -2,7 +2,7 @@
   "name": "eclipse",
   "version": "2.5.0",
   "homepage": "https://github.com/HiekkiStudio/Eclipse",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "author": {
     "name": "Hiekki4",
     "email": "hiekki4@gmail.com"
@@ -15,31 +15,38 @@
     "url": "https://github.com/Hiekki4/Eclipse/issues"
   },
   "scripts": {
-    "start": "node eclipse/start.js",
+    "start": "node dist/src/start.js",
     "build": "tsc",
-    "build:start": "tsc && node dist/src/start.js",
+    "build:start": "tsc && node -r dotenv/config dist/src/start.js",
     "eslint": "eslint ."
   },
-  "main": "src/index.ts",
+  "main": "dist/src/index.ts",
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=16.0.0"
   },
   "dependencies": {
-    "chalk": "^4.1.0",
-    "discord.js": "^12.5.3",
+    "denky-database": "^1.0.6",
+    "discord.js": "^13.0.1",
     "erela.js": "^2.3.3",
-    "erela.js-deezer": "^1.0.5",
-    "erela.js-spotify": "^1.2.0",
-    "fs": "0.0.1-security",
+    "erela.js-deezer": "^1.0.7",
     "glob": "^7.1.7",
     "moment": "^2.29.1",
     "music-progress-bar": "^1.0.4",
     "path": "^0.12.7",
-    "util": "^0.12.3"
+    "superagent": "^6.1.0"
   },
   "devDependencies": {
-    "@types/node": "^14.14.37",
+    "@sentry/node": "^6.11.0",
+    "@types/node": "^14.17.9",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "tslib": "^1.14.1",
     "typescript": "^4.3.5"
   }
 }

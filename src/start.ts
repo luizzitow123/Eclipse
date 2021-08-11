@@ -1,17 +1,17 @@
 import { ShardingManager } from 'discord.js';
-import config from '../config/config.json';
-import logger from './core/logger';
+import logger from './modules/logger';
 import chalk from 'chalk';
-import axios from 'axios';
 import fs from 'fs';
+
 require('./structures/checkVersion')
+
 const logo = fs.readFileSync('./logo.txt').toString()
 console.log(chalk.blueBright(logo), '\n');
 
 // eslint-disable-next-line
 const shard = new ShardingManager(`${__dirname}/index.js`, {
-    token: config.bot.token,
-    totalShards: config.bot.shards || "auto",
+    token: process.env.BOT_TOKEN,
+    totalShards: "auto",
     respawn: true,
 });
 
