@@ -16,6 +16,8 @@ jobs:
       - name: Changelog
         uses: scottbrenner/generate-changelog-action@master
         id: Changelog
+        with:
+          allow-unknown: true
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
