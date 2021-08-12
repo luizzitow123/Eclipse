@@ -6,23 +6,64 @@ module.exports = class extends Event {
 
     await interaction.deferReply()
 
-    if (!interaction.guildId || !interaction.channelId) {
-      return interaction.editReply('Hello. I like my privacy, and do not handle things in DMs. It appears this is a direct message. You should interact with me in your guild instead.')
+    if (!this.client.commands.has(interaction.commandName)) return
+
+    let lang = this.client.db.get(interaction.guild.id) || 'en'
+
+    const checks = this.client.db.get(interaction.guild.id) || 'pt'
+
+    const ptbr = JSON.parse(JSON.stringify(this.client.lang.pt))
+    const enus = JSON.parse(JSON.stringify(this.client.lang.en))
+
+    switch (lang.toLowerCase()) {
+      case 'pt':
+        lang = ptbr
+        break
+      case 'en':
+        lang = enus
+        break
+      default:
+        lang = enus
+        break
     }
 
-    if (!interaction.client.guilds.cache.get(interaction.guildId)) {
-      return interaction.editReply('For interactions to work, you need to add me with the scope ```applications.commands```')
+    if (!interaction.guild) {
+      return interaction.editReply(lang.interaction.dm)
     }
 
-    const serverPrefix = this.client.prefix
+    const command = this.client.commands.get(interaction.commandName)
 
-    interaction.author = interaction.user
+    if (command.ownerOnly && !this.client.utils.checkOwner(interaction.user.id)) {
+      return interaction.editReply(lang.message.dono)
+    }
 
-    interaction.content = `${serverPrefix}${interaction.commandName} ${interaction.options.size > 0 ? interaction.options.map(i => i.value) : ''}`.trim()
+    if (!command.enabled) {
+      return interaction.editReply(lang.message.desabilitado)
+    }
 
-    interaction.slash = true
+    if (command.nsfw && !interaction.channel.nsfw) {
+      return interaction.editReply(lang.message.nsfw)
+    }
+
+    const userPermCheck = command.userPerms ? this.client.defaultPerms.add(command.userPerms) : this.client.defaultPerms
+    if (userPermCheck && !this.client.utils.checkOwner(interaction.user.id)) {
+      const missing = interaction.channel.permissionsFor(interaction.member).missing(userPermCheck)
+      if (missing.length) {
+        return interaction.editReply(`${lang.message.userPerms} \`${checks === 'en' ? this.client.utils.formatArray(missing.map(this.client.utils.formatPerms)) : this.client.utils.formatArray2(missing.map(this.client.utils.formatPerms))}\` ${lang.message.userPerms2}`)
+      }
+    }
+
+    const botPermCheck = command.botPerms ? this.client.defaultPerms.add(command.botPerms) : this.client.defaultPerms
+    if (botPermCheck) {
+      const missing = interaction.channel.permissionsFor(this.client.user).missing(botPermCheck)
+      if (missing.length) {
+        return interaction.editReply(`${lang.message.botPerm} \`${checks === 'en' ? this.client.utils.formatArray(missing.map(this.client.utils.formatPerms)) : this.client.utils.formatArray2(missing.map(this.client.utils.formatPerms))}\` ${lang.message.botPerm2}`)
+      }
+    }
 
     let response = false
+
+    interaction.author = interaction.user
 
     interaction.reply = async (c, o) => {
       if (!response) {
@@ -42,6 +83,11 @@ module.exports = class extends Event {
       }
     }
 
-    this.client.emit('messageCreate', interaction)
+    try {
+      await command.run(interaction, lang)
+    } catch (error) {
+      console.error(error)
+      await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true })
+    }
   }
 }

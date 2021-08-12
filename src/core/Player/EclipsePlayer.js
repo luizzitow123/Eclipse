@@ -10,6 +10,7 @@ module.exports = Structure.extend('Player', Player => {
       this.nightcore = false
       this.vaporwave = false
       this.bassboost = false
+      this.radio = false
     }
 
     setSpeed (speed) {
@@ -55,7 +56,7 @@ module.exports = Structure.extend('Player', Player => {
       if (bassboost) {
         this.setVaporwave(false)
         this.setNightcore(false)
-        this.setEqualizer(1, 0.85)
+        this.setEqualizer(1, 0.95)
       } else this.clearEffects()
       return this
     }

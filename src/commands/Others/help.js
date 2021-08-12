@@ -46,10 +46,10 @@ module.exports = class help extends Command {
 		    embed1.setTimestamp()
 		    embed1.setAuthor(this.client.user.username, this.client.user.displayAvatarURL({ size: 2048 }))
 		    embed1.addFields(
-			    { name: `${lang.help.outros} (${this.client.commands.filter(command => command.category === 'Outros').size})`, value: `${this.client.commands.filter(command => command.category === 'Outros').map(e => `\`${this.client.prefix}${e.name}\``).join(' **|** ')}` + '.' },
-			    { name: `${lang.help.musica} (${this.client.commands.filter(command => command.category === 'Música').size})`, value: `${this.client.commands.filter(command => command.category === 'Música').map(e => `\`${this.client.prefix}${e.name}\``).join(' **|** ')}` + '.' },
-			    { name: `${lang.help.filtros} (${this.client.commands.filter(command => command.category === 'Filtros').size})`, value: `${this.client.commands.filter(command => command.category === 'Filtros').map(e => `\`${this.client.prefix}${e.name}\``).join(' **|** ')}` + '.' },
-			    { name: `${lang.help.dev} (${this.client.commands.filter(command => command.category === 'Desenvolvedor').size})`, value: `${this.client.commands.filter(command => command.category === 'Desenvolvedor').map(e => `\`${this.client.prefix}${e.name}\``).join(' **|** ')}` + '.' }
+			    { name: `${lang.help.outros} (${this.client.commands.filter(command => command.category === 'Others').size})`, value: `${this.client.commands.filter(command => command.category === 'Outros').map(e => `\`${this.client.prefix}${e.name}\``).join(' **|** ')}` + '.' },
+			    { name: `${lang.help.musica} (${this.client.commands.filter(command => command.category === 'Music').size})`, value: `${this.client.commands.filter(command => command.category === 'Música').map(e => `\`${this.client.prefix}${e.name}\``).join(' **|** ')}` + '.' },
+			    { name: `${lang.help.filtros} (${this.client.commands.filter(command => command.category === 'Filters').size})`, value: `${this.client.commands.filter(command => command.category === 'Filtros').map(e => `\`${this.client.prefix}${e.name}\``).join(' **|** ')}` + '.' },
+			    { name: `${lang.help.dev} (${this.client.commands.filter(command => command.category === 'Developer').size})`, value: `${this.client.commands.filter(command => command.category === 'Desenvolvedor').map(e => `\`${this.client.prefix}${e.name}\``).join(' **|** ')}` + '.' }
       )
       return message.reply({ embeds: [embed1] })
     }

@@ -115,13 +115,22 @@ class Util {
         const File = require(commandFile)
         if (!this.isClass(File)) throw new TypeError(`Command ${name} doesn't export a class.`)
         const command = new File(this.client, name.toLowerCase())
-        if (!(command instanceof Command)) throw new TypeError(`Comamnd ${name} doesnt belong in Commands.`)
-        this.client.commands.set(command.name, command)
-        if (command.aliases.length) {
-          for (const alias of command.aliases) {
-            this.client.aliases.set(alias, command.name)
+        if (!(command instanceof Command)) throw new TypeError(`Command ${name} doesnt belong in Commands.`)
+        let slashCommand
+        if (command.options) {
+          slashCommand = {
+            name: command.name,
+            description: command.description,
+            options: command.options
+          }
+        } else {
+          slashCommand = {
+            name: command.name,
+            description: command.description
           }
         }
+        this.client.application?.commands.set(slashCommand)
+        this.client.commands.set(command.name, command)
       }
     })
   }

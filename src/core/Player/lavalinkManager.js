@@ -38,7 +38,10 @@ module.exports = async (client) => {
       embed.setTimestamp()
       embed.setColor(client.channels.cache.get(player.textChannel).guild.me.roles.highest.color)
       embed.setFooter()
-      channel.send(embed).then(msg => player.set('message', msg))
+      player.get('interaction').reply({ embeds: [embed] }).then(msg => {
+        player.set('interaction', null)
+        player.set('message', msg)
+      })
     })
 
     .on('trackEnd', (player) => {
