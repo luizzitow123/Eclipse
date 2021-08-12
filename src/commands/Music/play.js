@@ -8,7 +8,7 @@ module.exports = class extends Command {
       name: 'play',
       description: 'Play a son in your voice channel',
       options: [{
-        name: 'input',
+        name: 'query',
         type: 'STRING',
         description: 'A search term or link',
         required: true
@@ -41,7 +41,7 @@ module.exports = class extends Command {
 
     if (!player.voiceChannel === channel.id) { return interaction.reply(lang.play.tocandoJa) }
 
-    const search = interaction.options.getString('song')
+    const search = interaction.options.getString('query')
     let res
 
     try {
