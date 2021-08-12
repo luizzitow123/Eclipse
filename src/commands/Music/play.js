@@ -20,24 +20,23 @@ module.exports = class extends Command {
   }
 
   async run (interaction, lang) {
-    const play = interaction.client.manager.players.get(interaction.guild.id)
+
 
     const { channel } = interaction.member.voice
 
     if (!channel) return interaction.reply(lang.play.semCanal)
+    if (!channel.joinable) { return interaction.reply(lang.play.semPerm) }
 
-    if (!play) {
+
       const player = interaction.client.manager.create({
         guild: interaction.guild.id,
         voiceChannel: channel.id,
         textChannel: interaction.channel.id,
         selfDeafen: true
       })
-      if (!channel.joinable) { return interaction.reply(lang.play.semPerm) }
-      await player.connect()
-    }
+      
+      if(player.state !== "CONNECTED") await player.connect()
 
-    const player = interaction.client.manager.players.get(interaction.guild.id)
 
     if (!player.voiceChannel === channel.id) { return interaction.reply(lang.play.tocandoJa) }
 
