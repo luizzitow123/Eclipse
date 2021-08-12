@@ -15,7 +15,7 @@ jobs:
           python-version: "3.8"
       - name: Create changelog
         id: changelog
-        uses: loopwerk/tag-changelog@vlatest
+        uses: loopwerk/tag-changelog@latest
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           config_file: .github/changelog.js
