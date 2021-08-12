@@ -2,7 +2,7 @@ name: "Changelog auto update"
 
 on:
   push:
-    branches: [develop]
+    tags: '*'
 
 jobs:
   comment:
